@@ -1,6 +1,7 @@
 # Multiple Linear Regression With ATP Men's Data
 
-This project aims to analyze hardware performance metrics related to tasks executed on FPGA (Field-Programmable Gate Array) systems using High-Level Synthesis (HLS). Hopefully, this project is able to analyze hardware performance metrics related to tasks executed on FPGA (Field-Programmable Gate Array) systems using High-Level Synthesis (HLS)
+This project aims to analyze hardware performance metrics related to tasks executed on FPGA (Field-Programmable Gate Array) systems using High-Level Synthesis (HLS). Hopefully, this project is able to analyze hardware performance metrics related to tasks executed on FPGA (Field-Programmable Gate Array) systems using High-Level Synthesis (HLS).
+
 ## Test Environment
 
 Python 3.9.6
@@ -32,8 +33,7 @@ You can import these libraries through Pip.
 
 ### Load Dataframe
 
-
-The dataframe used in this project is contributed by @georgewzg95. The dataset is loaded from a CSV file.
+The dataframe used in this project is contributed by @georgewzg95. The dataset is loaded from a CSV file. The dataframe contains 1340 entries and different FPGA tasks. 
 The dataset contains various hardware performance measurements. Columns include:
 
 clock_speed: The speed at which the task operates. Higher clock speeds usually indicate faster processing times.
@@ -43,7 +43,7 @@ dsp (Digital Signal Processing Units): pecialized hardware units designed to eff
 ram (Random Access Memory):a type of computer memory that can be accessed randomly, and it is used to store data temporarily while the task is running.
 mlab (Memory Lab Usage): specialized memory blocks within FPGAs used for various memory-related operations.
 
-The purpose of 'pd.read_csv('data_intel.csv')' is to Specify the path to the CSV file to be loaded. Ensure that the file path is correct and accessible from the script's location.
+The purpose of 'pd.read_csv('data_intel.csv')' is to Specify the path to the CSV file to be loaded. Ensure the file path is correct and accessible from the script's location.
 'ata_intel.csv' = CSV dataset used in the project.
 ```python
 HLS_data = pd.read_csv('data_intel.csv')
@@ -95,14 +95,40 @@ zvs = HLS_data.select_dtypes(include=[np.number])
 - Compute and display correlation coefficients to identify relationships between key features with timing and operation delay prediction/ Power estimate
 - Develop and evaluate linear regression models to predict alm (Adaptive Logic Modules) and clock_speed based on other hardware metrics.
 - Assess model performance using metrics such as Mean Squared Error (MSE) and R-squared (R²).
-- Coefficient analyized.
+- Coefficient analyzed.
+
+ALM Correlation:
+- Strong positive correlation with reg (0.981) and mlab (0.909).
+- Moderate positive correlation with dsp (0.703).
+- Weak negative correlation with clock_speed (-0.362).
+Clock Speed Correlation:
+- Weak negative correlation with alm (-0.362) and mlab (-0.414).
+- weak correlation with other metrics.
+
+ALM Prediction:
+
+Model Performance: R² = 0.988, MSE = 24,238,366.47
+Key Influences:
+Positive influences: reg (0.404),  mlab (8.980)
+Negative influences: clock_speed (-23.433), dsp (-96.263), ram (-7.495)
+Clock Speed Prediction:
+
+Model Performance: R² = 0.382, MSE = 5,969.85
+- Positive influences: dsp (0.378), mlab (0.048)
+- Negative influences: alm (-0.008), reg (0.003), ram (-0.097)
+
+
+
 
 ### Clustering
 - Understand and describe the characteristics of each cluster, providing insights into resource-intensive tasks, performance-optimized tasks, and more.
-- Create 3 different clusters and categorize through different measures.
+- Create three different clusters and categorize them using various measures.
 
-- Cluster 0: Tasks with moderate resource usage and lower clock speeds, possibly less intensive but still needing considerable resources.
+- Cluster 0: Tasks with moderate resource usage and lower clock speeds, possibly less intensive but still need considerable resources.
+Example Tasks: atax_1, bicg_14, k2mm_9, bfs_bulk_43, gemm_blocked_39
 - Cluster 1: High resource usage across all metrics, likely representing the most demanding tasks that need powerful hardware.
+Example Tasks: gemm_ncubed_6, spmv_crs_27, stencil2D_36
 - Cluster 2: High clock speeds but minimal resource consumption, indicating highly efficient tasks that are less resource-intensive but performance-oriented.
+Example Tasks: atax_3, bicg_5, k3mm_4, syrk_12, bfs_queue_1 
 
 
