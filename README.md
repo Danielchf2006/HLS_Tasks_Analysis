@@ -98,12 +98,14 @@ zvs = HLS_data.select_dtypes(include=[np.number])
 - Coefficient analyzed.
 
 ALM Correlation:
-- Strong positive correlation with reg (0.981) and mlab (0.909).
-- Moderate positive correlation with dsp (0.703).
-- Weak negative correlation with clock_speed (-0.362).
+- Strong positive correlation with reg (0.981) and mlab (0.909)
+- Moderate positive correlation with dsp (0.703)
+- Weak negative correlation with clock_speed (-0.362)
+
+
 Clock Speed Correlation:
-- Weak negative correlation with alm (-0.362) and mlab (-0.414).
-- weak correlation with other metrics.
+- Weak negative correlation with alm (-0.362) and mlab (-0.414)
+- weak correlation with other metrics
 
 ALM Prediction:
 
@@ -126,8 +128,10 @@ Model Performance: R² = 0.382, MSE = 5,969.85
 
 - Cluster 0: Tasks with moderate resource usage and lower clock speeds, possibly less intensive but still need considerable resources.
 Example Tasks: atax_1, bicg_14, k2mm_9, bfs_bulk_43, gemm_blocked_39
+
 - Cluster 1: High resource usage across all metrics, likely representing the most demanding tasks that need powerful hardware.
 Example Tasks: gemm_ncubed_6, spmv_crs_27, stencil2D_36
+
 - Cluster 2: High clock speeds but minimal resource consumption, indicating highly efficient tasks that are less resource-intensive but performance-oriented.
 Example Tasks: atax_3, bicg_5, k3mm_4, syrk_12, bfs_queue_1 
 
