@@ -108,13 +108,12 @@ Clock Speed Correlation:
 - weak correlation with other metrics
 
 ALM Prediction:
-
 Model Performance: R² = 0.988, MSE = 24,238,366.47
-Key Influences:
-Positive influences: reg (0.404),  mlab (8.980)
-Negative influences: clock_speed (-23.433), dsp (-96.263), ram (-7.495)
-Clock Speed Prediction:
+- Positive influences: reg (0.404),  mlab (8.980)
+- Negative influences: clock_speed (-23.433), dsp (-96.263), ram (-7.495)
 
+
+Clock Speed Prediction:
 Model Performance: R² = 0.382, MSE = 5,969.85
 - Positive influences: dsp (0.378), mlab (0.048)
 - Negative influences: alm (-0.008), reg (0.003), ram (-0.097)
