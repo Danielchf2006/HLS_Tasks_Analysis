@@ -1,6 +1,6 @@
-# Multiple Linear Regression With ATP Men's Data
+# Analysation of HLS Dataset using Machine Learning Models
 
-This project aims to analyze hardware performance metrics related to tasks executed on FPGA (Field-Programmable Gate Array) systems using High-Level Synthesis (HLS). Hopefully, this project is able to analyze hardware performance metrics related to tasks executed on FPGA (Field-Programmable Gate Array) systems using High-Level Synthesis (HLS).
+This project aims to analyze hardware performance metrics related to tasks executed on FPGA (Field-Programmable Gate Array) systems using High-Level Synthesis (HLS). 
 
 ## Test Environment
 
