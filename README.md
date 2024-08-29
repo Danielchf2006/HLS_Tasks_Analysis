@@ -37,10 +37,15 @@ The dataframe used in this project is contributed by @georgewzg95. The dataset i
 The dataset contains various hardware performance measurements. Columns include:
 
 clock_speed: The speed at which the task operates. Higher clock speeds usually indicate faster processing times.
+
 alm(Adaptive Logic Modules): Represents the number of adaptive logic modules used by the task. ALMs are the basic building blocks in FPGAs that implement logic functions.
+
 reg (Registers): The number of registers used by the task. Registers are small storage locations within a processor or FPGA that hold data temporarily.
+
 dsp (Digital Signal Processing Units): pecialized hardware units designed to efficiently perform complex mathematical computations, particularly for digital signal processing tasks.
+
 ram (Random Access Memory):a type of computer memory that can be accessed randomly, and it is used to store data temporarily while the task is running.
+
 mlab (Memory Lab Usage): specialized memory blocks within FPGAs used for various memory-related operations.
 
 The purpose of 'pd.read_csv('data_intel.csv')' is to Specify the path to the CSV file to be loaded. Ensure the file path is correct and accessible from the script's location.
